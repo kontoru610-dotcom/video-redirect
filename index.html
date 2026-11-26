@@ -2,31 +2,101 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video</title>
 
-  <title>Video Player</title>
-  <meta property="og:title" content="Video Player">
-  <meta property="og:description" content="Watch video">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="URL-GAMBAR-THUMBNAIL">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Video Player">
-  <meta name="twitter:image" content="URL-GAMBAR-THUMBNAIL">
+body {
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.video-container {
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+  cursor: pointer;
+  background: #000;
+}
+
+video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.play-button {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: rgba(0,0,0,.65);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+</style>
 </head>
+
 <body>
-  <h2>Video Player</h2>
-  <p>Mengalihkan ke halaman video...</p>
 
-  <script>
-    window.location.replace(
-      "https://videy-co-id.s.gy/mJ7crS"
-    );
-  </script>
+<div class="video-container" id="videoLink">
 
-  <a href="https://videy-co-id.s.gy/mJ7crS">
-    Buka video
-  </a>
+  <video
+    id="myVideo"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    poster=""
+  >
+    <source
+      src="https://x.com/GarfieldDarnle1/status/2125718276760338699/video/1⁠"
+      type="video/mp4">
+  </video>
+
+  <div class="play-overlay">
+    <div class="play-button">▶</div>
+  </div>
+
+</div>
+
+<script>
+const video = document.getElementById("myVideo");
+
+const destination =
+"https://uc-share.com/s/8bc5cfe88ed74?la=id";
+
+document.getElementById("videoLink").addEventListener("click", function() {
+  window.location.href = destination;
+});
+
+video.play().catch(() => {});
+</script>
+
 </body>
 </html>
